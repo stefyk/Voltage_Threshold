@@ -76,7 +76,7 @@ class MCP3201(object):
  
 
 
-if name == '__main__':
+if __name__ == '__main__':
     SPI_bus = 0
     CE = 0
     MCP3201 = MCP3201(SPI_bus, CE)

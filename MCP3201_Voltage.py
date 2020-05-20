@@ -3,6 +3,7 @@
 
 import spidev
 from time import sleep
+import time
 
 # uses the "spidev" package ('sudo pip3 install spidev')
 # check dtparam=spi=on --> in /boot/config.txt or (set via 'sudo raspi-config')

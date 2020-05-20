@@ -88,13 +88,13 @@ if name == '__main__':
         while True:
             ADC_output_code = MCP3201.readADC_MSB()
             ADC_voltage = MCP3201.convert_to_voltage(ADC_output_code)
-            if ADC_voltage > 1.5 and above = False: 
+            if ADC_voltage > 1.5 and above == False: 
                 now = time.time()
                 time_interval = now - last_time
                 above = True
                 last_time = time.time()
                 print("Time below 1.5: " + time_interval)
-            elif ADC_voltage <= 1.5 and above = True:
+            elif ADC_voltage <= 1.5 and above == True:
                 now = time.time()
                 time_interval = now - last_time
                 above = False

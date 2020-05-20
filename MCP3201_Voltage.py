@@ -94,13 +94,13 @@ if __name__ == '__main__':
                 time_interval = now - last_time
                 above = True
                 last_time = time.time()
-                print("Time below 1.5: " + time_interval)
+                print("Time below 1.5: %0.6f" % time_interval)
             elif ADC_voltage <= 1.5 and above == True:
                 now = time.time()
                 time_interval = now - last_time
                 above = False
                 last_time = time.time()
-                print("Time above 1.5: " + time_interval)
+                print("Time above 1.5: %0.6f" % time_interval)
                 
             print("MCP3201 output code (MSB-mode): %d" % ADC_output_code)
             print("MCP3201 voltage: %0.2f V" % ADC_voltage)

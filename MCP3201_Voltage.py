@@ -95,7 +95,7 @@ if __name__ == '__main__':
                 time_interval = (now - last_time)*2.0
                 freq = 1.0/time_interval
                 above = True
-                last_time = time.time()
+                #last_time = time.time()
                 #print("Time below 0.5: %0.6f" % freq)
                 print("Time below 0.5: %0.6f" % time_interval)
             elif ADV_Voltage <= 0.5 and above == True:

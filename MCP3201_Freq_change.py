@@ -4,6 +4,7 @@
 import spidev
 from time import sleep
 import time
+import numpy as np #scientific module of python; importing library to save the output data
 
 # uses the "spidev" package ('sudo pip3 install spidev')
 # check dtparam=spi=on --> in /boot/config.txt or (set via 'sudo raspi-config')
@@ -86,6 +87,8 @@ if __name__ == '__main__':
     last_time = 0
     last_freq = 0
     counter = 0
+    time_data = []  #array where the time will be stored
+    freq_data = [] #array where the frequency will be stored
     
     try:
         while True:
@@ -106,6 +109,8 @@ if __name__ == '__main__':
                     #print("Time below 0.5: %0.6f" % freq)
                     #print("%0.6f" % freq)
                     print(frequency - last_freq)
+                    freq_data.append(frequency - last_freq) #creating an array holding time and frequency
+                    time_data.append(now) # adding this array to other arrays holding the same data
                     last_freq=frequency
             elif ADC_voltage <= 1.5 and above == True:
                 #last_time = time.time()
@@ -138,4 +143,5 @@ if __name__ == '__main__':
         raise
 
     finally:
+        np.savetxt("Change in Frequency over time.csv",(time_data, freq_data),delimiter=",") #save data in text file
         print()

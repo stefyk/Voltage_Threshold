@@ -92,7 +92,8 @@ if __name__ == '__main__':
             if ADC_voltage > 0.5 and above == False: 
                 now = time.time()
                 #freq = 1/((now - last_time)*2)
-                time_interval = (now - last_time)*2
+                time_interval = (now - last_time)*2.0
+                freq = 1.0/time_interval
                 above = True
                 last_time = time.time()
                 #print("Time below 1.5: %0.6f" % freq)
@@ -107,7 +108,7 @@ if __name__ == '__main__':
             #print("MCP3201 output code (MSB-mode): %d" % ADC_output_code)
             #print("MCP3201 voltage: %0.2f V" % ADC_voltage)
             
-            #sleep(0.1)  # wait minimum of 100 ms between ADC measurements
+            sleep(0.000001)  # wait minimum of 100 ms between ADC measurements
             
             #ADC_output_code = MCP3201.readADC_LSB()
             #ADC_voltage = MCP3201.convert_to_voltage(ADC_output_code)

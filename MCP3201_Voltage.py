@@ -90,7 +90,7 @@ if __name__ == '__main__':
         while True:
             ADC_output_code = MCP3201.readADC_LSB()
             ADC_voltage = MCP3201.convert_to_voltage(ADC_output_code)
-            if ADC_voltage > 1.0 and above == False: 
+            if ADC_voltage > 2.0 and above == False: 
                 counter = counter + 1
                 above = True
                 if counter %1000 == 0:
@@ -103,7 +103,7 @@ if __name__ == '__main__':
                     last_time = now
                     #print("Time below 0.5: %0.6f" % freq)
                     print("%0.6f" % freq)
-            elif ADC_voltage <= 1.0 and above == True:
+            elif ADC_voltage <= 2.0 and above == True:
                 #last_time = time.time()
                 above = False
             #elif ADC_voltage <= 0.5 and above == True:

@@ -134,7 +134,6 @@ if __name__ == '__main__':
             #print()
             
             #sleep(1)
-
     except (KeyboardInterrupt):
         print('\n', "Exit on Ctrl-C: Good bye!")
 
@@ -143,5 +142,5 @@ if __name__ == '__main__':
         raise
 
     finally:
-        np.savetxt("Change in Frequency over time.csv",(time_data, freq_data),delimiter=",") #save data in text file
+        np.savetxt("data.csv",(time_data, freq_data),delimiter=",") #save data in text file
         print()

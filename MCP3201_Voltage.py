@@ -68,7 +68,7 @@ class MCP3201(object):
         return int(LSB, base=2)
 
         
-    def convert_to_voltage(self, adc_output, VREF=3.4):
+    def convert_to_voltage(self, adc_output, VREF=3.5):
         """
         Calculates analogue voltage from the digital output code (ranging from 0-4095)
         VREF could be adjusted here (standard uses the 3V3 rail from the Rpi)
@@ -88,7 +88,7 @@ if __name__ == '__main__':
     
     try:
         while True:
-            ADC_output_code = MCP3201.readADC_LSB()
+            ADC_output_code = MCP3201.readADC_MSB()
             ADC_voltage = MCP3201.convert_to_voltage(ADC_output_code)
             if ADC_voltage > 1.5 and above == False: 
                 counter = counter + 1

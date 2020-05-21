@@ -97,7 +97,7 @@ if __name__ == '__main__':
                     now = time.time()
                     #freq = 1/((now - last_time)*2)
                     time_interval = (now - last_time)
-                    period = time_interval*2/1000.0
+                    period = time_interval/1000.0
                     freq = 1.0/period
                     #above = True
                     last_time = now

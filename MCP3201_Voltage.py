@@ -92,7 +92,7 @@ if __name__ == '__main__':
             if ADC_voltage > 0.5 and above == False: 
                 now = time.time()
                 #freq = 1/((now - last_time)*2)
-                time_interval = 1/((now - last_time)*2)
+                time_interval = (now - last_time)*2
                 above = True
                 last_time = time.time()
                 #print("Time below 1.5: %0.6f" % freq)

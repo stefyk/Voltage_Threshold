@@ -91,10 +91,12 @@ if __name__ == '__main__':
             ADC_voltage = MCP3201.convert_to_voltage(ADC_output_code)
             if ADC_voltage > 0.5 and above == False: 
                 now = time.time()
-                time_interval = (now - last_time)*2
+                freq = 1/((now - last_time)*2)
+                #time_interval = (now - last_time)
                 above = True
                 last_time = time.time()
-                print("Time below 1.5: %0.6f" % time_interval)
+                print("Time below 1.5: %0.6f" % freq)
+                #print("Time below 1.5: %0.6f" % time_interval)
             #elif ADC_voltage <= 0.5 and above == True:
                 #now = time.time()
                 #time_interval = now - last_time

@@ -115,7 +115,7 @@ if __name__ == '__main__':
             #print("MCP3201 voltage: %0.2f V" % ADC_voltage)
             #print()
             
-            #sleep(1)
+            sleep(0.1)
 
     except (KeyboardInterrupt):
         print('\n', "Exit on Ctrl-C: Good bye!")
